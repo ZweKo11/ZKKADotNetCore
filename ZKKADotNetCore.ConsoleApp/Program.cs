@@ -37,13 +37,16 @@ foreach (DataRow dr in dt.Rows)
 }*/
 //Ado.Net Read
 
-AdoDotNetExample adoDotNetExample = new AdoDotNetExample();
+//AdoDotNetExample adoDotNetExample = new AdoDotNetExample();
 //adoDotNetExample.Read();
 //adoDotNetExample.Create("title","author","content");
 //adoDotNetExample.Update(12, "update title", "update author", "update content");
 //adoDotNetExample.Delete(12);
-adoDotNetExample.Edit(12);
-adoDotNetExample.Edit(11);
+//adoDotNetExample.Edit(12);
+//adoDotNetExample.Edit(11);
+
+DapperExample dapperExample = new DapperExample();
+dapperExample.Run();
 
 
 Console.ReadKey();
