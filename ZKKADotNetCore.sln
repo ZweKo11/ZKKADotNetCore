@@ -7,10 +7,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ZKKADotNetCore.ConsoleApp",
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documents", "Documents", "{480E1D0D-408A-4249-B8FE-0C59E0542E4A}"
 	ProjectSection(SolutionItems) = preProject
+		DotNetTrainingBatch4.sql = DotNetTrainingBatch4.sql
 		README.md = README.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZKKADotNetCore.WebApi", "ZKKADotNetCore.WebApi\ZKKADotNetCore.WebApi.csproj", "{F1CF3048-0DB7-4DB9-864F-2AB22485861E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ZKKADotNetCore.WebApi", "ZKKADotNetCore.WebApi\ZKKADotNetCore.WebApi.csproj", "{F1CF3048-0DB7-4DB9-864F-2AB22485861E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
