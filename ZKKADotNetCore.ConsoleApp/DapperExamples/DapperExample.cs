@@ -7,8 +7,10 @@ using System.Linq;
 using System.Reflection.Metadata;
 using System.Text;
 using System.Threading.Tasks;
+using ZKKADotNetCore.ConsoleApp.Dtos;
+using ZKKADotNetCore.ConsoleApp.Services;
 
-namespace ZKKADotNetCore.ConsoleApp
+namespace ZKKADotNetCore.ConsoleApp.DapperExamples
 {
     internal class DapperExample
     {
@@ -25,9 +27,9 @@ namespace ZKKADotNetCore.ConsoleApp
         private void Read()
         {
             using IDbConnection db = new SqlConnection(ConnectionStrings.SqlConnectionStringBuilder.ConnectionString);
-            List<BlogDto> lst =  db.Query<BlogDto>("select * from tbl_blog").ToList();
-            
-            foreach(BlogDto item in lst)
+            List<BlogDto> lst = db.Query<BlogDto>("select * from tbl_blog").ToList();
+
+            foreach (BlogDto item in lst)
             {
                 Console.WriteLine(item.BlogId);
                 Console.WriteLine(item.BlogAuthor);
@@ -41,7 +43,7 @@ namespace ZKKADotNetCore.ConsoleApp
         {
             using IDbConnection db = new SqlConnection(ConnectionStrings.SqlConnectionStringBuilder.ConnectionString);
             var item = db.Query<BlogDto>("select * from tbl_blog where blogId = @BlogId", new BlogDto { BlogId = id }).FirstOrDefault();
-            if(item is null)
+            if (item is null)
             {
                 Console.WriteLine("No data is found!");
                 return;
@@ -54,8 +56,8 @@ namespace ZKKADotNetCore.ConsoleApp
 
         private void Create(string title, string author, string content)
         {
-            var item =new BlogDto 
-            { 
+            var item = new BlogDto
+            {
                 BlogTitle = title,
                 BlogAuthor = author,
                 BlogContent = content

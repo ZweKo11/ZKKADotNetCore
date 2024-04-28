@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using System.Collections;
 using System.Reflection.Metadata;
 
-namespace ZKKADotNetCore.ConsoleApp
+namespace ZKKADotNetCore.ConsoleApp.AdoDotNetExamples
 {
     internal class AdoDotNetExample
     {
@@ -22,7 +22,7 @@ namespace ZKKADotNetCore.ConsoleApp
         public void Read()
         {
             SqlConnection connection = new SqlConnection(_sqlConnectionStringBuilder.ConnectionString);
-            
+
             connection.Open();
             Console.WriteLine("Connection open");
 
@@ -64,21 +64,21 @@ namespace ZKKADotNetCore.ConsoleApp
 
             connection.Close();
             Console.WriteLine("Connection close");
-            
-            if(dt.Rows.Count == 0)
+
+            if (dt.Rows.Count == 0)
             {
                 Console.WriteLine("No data found.");
                 return;
             }
 
             DataRow dr = dt.Rows[0];
-          
-                Console.WriteLine("Blog Id =>" + dr["BlogId"]);
-                Console.WriteLine("Blog Title =>" + dr["BlogTitle"]);
-                Console.WriteLine("Blog Author =>" + dr["BlogAuthor"]);
-                Console.WriteLine("Blog Content =>" + dr["BlogContent"]);
-                Console.WriteLine("-----------------------------");
-          
+
+            Console.WriteLine("Blog Id =>" + dr["BlogId"]);
+            Console.WriteLine("Blog Title =>" + dr["BlogTitle"]);
+            Console.WriteLine("Blog Author =>" + dr["BlogAuthor"]);
+            Console.WriteLine("Blog Content =>" + dr["BlogContent"]);
+            Console.WriteLine("-----------------------------");
+
         }
         public void Create(string title, string author, string content)
         {
@@ -93,7 +93,7 @@ namespace ZKKADotNetCore.ConsoleApp
             VALUES
                (@BlogTitle
                ,@BlogAuthor
-               ,@BlogContent)"; 
+               ,@BlogContent)";
             SqlCommand cmd = new SqlCommand(query, connection);
             cmd.Parameters.AddWithValue("@BlogTitle", title);
             cmd.Parameters.AddWithValue("@BlogAuthor", author);
@@ -128,7 +128,7 @@ namespace ZKKADotNetCore.ConsoleApp
             Console.WriteLine(message);
         }
 
-        public void Delete (int id)
+        public void Delete(int id)
         {
             SqlConnection connection = new SqlConnection(_sqlConnectionStringBuilder.ConnectionString);
 

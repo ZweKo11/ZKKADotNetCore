@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ZKKADotNetCore.ConsoleApp.Dtos;
 
-namespace ZKKADotNetCore.ConsoleApp
+namespace ZKKADotNetCore.ConsoleApp.EFCoreExamples
 {
     internal class EFCoreExample
     {
@@ -22,7 +23,7 @@ namespace ZKKADotNetCore.ConsoleApp
         {
 
             var lst = db.Blogs.ToList();
-            foreach (BlogDto item in lst)
+            foreach(BlogDto item in lst)
             {
                 Console.WriteLine(item.BlogId);
                 Console.WriteLine(item.BlogAuthor);

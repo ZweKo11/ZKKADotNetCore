@@ -6,14 +6,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ZKKADotNetCore.ConsoleApp;
+namespace ZKKADotNetCore.ConsoleApp.Dtos;
 
 [Table("tbl_blog")]
 public class BlogDto
 {
     [Key]
     public int BlogId { get; set; }
-    public string BlogTitle {  get; set; }
+    public string BlogTitle { get; set; }
     public string BlogAuthor { get; set; }
     public string BlogContent { get; set; }
 

@@ -1,7 +1,8 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using System.Data;
 using System.Data.SqlClient;
-using ZKKADotNetCore.ConsoleApp;
+using ZKKADotNetCore.ConsoleApp.AdoDotNetExamples;
+using ZKKADotNetCore.ConsoleApp.EFCoreExamples;
 
 Console.WriteLine("Hello, World!");
 
@@ -50,6 +51,5 @@ dapperExample.Run();*/
 
 EFCoreExample eFCoreExample = new EFCoreExample();
 eFCoreExample.Run();
-
 
 Console.ReadKey();
