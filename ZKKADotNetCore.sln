@@ -19,7 +19,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ZKKADotNetCore.WebApiNLayer
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ZKKADotNetCore.ConsoleAppHttpClient", "ZKKADotNetCore.ConsoleAppHttpClient\ZKKADotNetCore.ConsoleAppHttpClient.csproj", "{BD6B9BA8-6AB1-44A4-800D-1F9832B8BEB8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZKKADotNetCore.ConsoleAppHttpClientExample", "ZKKADotNetCore.ConsoleAppHttpClientExample\ZKKADotNetCore.ConsoleAppHttpClientExample.csproj", "{87D91F0C-7314-4EFB-A5C7-9F27F5615F64}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ZKKADotNetCore.ConsoleAppHttpClientExample", "ZKKADotNetCore.ConsoleAppHttpClientExample\ZKKADotNetCore.ConsoleAppHttpClientExample.csproj", "{87D91F0C-7314-4EFB-A5C7-9F27F5615F64}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZKKADotNetCore.ConsoleAppRestClientExample", "ZKKADotNetCore.ConsoleAppRestClientExample\ZKKADotNetCore.ConsoleAppRestClientExample.csproj", "{8AE3C4D2-309F-4EA7-9520-E53EAE00E754}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{87D91F0C-7314-4EFB-A5C7-9F27F5615F64}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{87D91F0C-7314-4EFB-A5C7-9F27F5615F64}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{87D91F0C-7314-4EFB-A5C7-9F27F5615F64}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8AE3C4D2-309F-4EA7-9520-E53EAE00E754}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8AE3C4D2-309F-4EA7-9520-E53EAE00E754}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8AE3C4D2-309F-4EA7-9520-E53EAE00E754}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8AE3C4D2-309F-4EA7-9520-E53EAE00E754}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
