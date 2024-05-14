@@ -27,9 +27,12 @@ namespace ZKKADotNetCore.WebApiNLayer.Features.Proverbs
         public async Task<IActionResult> ProverbTitles(string titleName)
         {
             var model = await GetDataAsync();
-            var titleId = model.Tbl_MMProverbsTitle.FirstOrDefault(x => x.TitleName == titleName).TitleId;
-            var result = model.Tbl_MMProverbs.Where(x => x.TitleId == titleId);
+            var item = model.Tbl_MMProverbsTitle.FirstOrDefault(x => x.TitleName == titleName);
+            if (item is null) return NotFound("no data");
 
+            var titleId = item.TitleId;
+            var result = model.Tbl_MMProverbs.Where(x => x.TitleId == titleId);
+            
             List<Tbl_MmproverbsWithoutDescp> lst = result.Select(x => new Tbl_MmproverbsWithoutDescp
             {
                 ProverbId = x.ProverbId,
