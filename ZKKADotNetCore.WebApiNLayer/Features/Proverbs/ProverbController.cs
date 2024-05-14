@@ -19,14 +19,24 @@ namespace ZKKADotNetCore.WebApiNLayer.Features.Proverbs
         public async Task<IActionResult> FirstLetter()
         {
             var model = await GetDataAsync();
+
             return Ok(model.Tbl_MMProverbsTitle);
         }
 
-        [HttpGet("{id}")]
-        public async Task<IActionResult> ProverbTitles(int id)
+        [HttpGet("{titleName}")]
+        public async Task<IActionResult> ProverbTitles(string titleName)
         {
             var model = await GetDataAsync();
-            return Ok(model.Tbl_MMProverbs.Where(x => x.TitleId == id));
+            var titleId = model.Tbl_MMProverbsTitle.FirstOrDefault(x => x.TitleName == titleName).TitleId;
+            var result = model.Tbl_MMProverbs.Where(x => x.TitleId == titleId);
+
+            List<Tbl_MmproverbsWithoutDescp> lst = result.Select(x => new Tbl_MmproverbsWithoutDescp
+            {
+                ProverbId = x.ProverbId,
+                ProverbName = x.ProverbName,
+                TitleId = x.TitleId
+            }).ToList();//without description
+            return Ok(lst);
         }
 
         [HttpGet("{titleId}/{proverbId}")]
@@ -59,4 +69,11 @@ namespace ZKKADotNetCore.WebApiNLayer.Features.Proverbs
         public string ProverbDesp { get; set; }
     }
 
+    public class Tbl_MmproverbsWithoutDescp
+    {
+        public int TitleId { get; set; }
+        public int ProverbId { get; set; }
+        public string ProverbName { get; set; }
+
+    }
 }
