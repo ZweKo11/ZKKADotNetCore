@@ -2,6 +2,8 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ZKKADotNetCore.PizzaApi.Database;
+using ZKKADotNetCore.PizzaApi.Queries;
+using ZKKADotNetCore.Shared;
 
 namespace ZKKADotNetCore.PizzaApi.Features.Pizza
 {
@@ -10,10 +12,12 @@ namespace ZKKADotNetCore.PizzaApi.Features.Pizza
     public class PizzaController : ControllerBase
     {
         private readonly AppDbContext _appDbcontext;
+        private readonly DapperService _dapperService;
 
         public PizzaController()
         {
             _appDbcontext = new AppDbContext();
+            _dapperService = new DapperService(ConnectionStrings.SqlConnectionStringBuilder.ConnectionString);
         }
 
         [HttpGet]
@@ -75,7 +79,8 @@ namespace ZKKADotNetCore.PizzaApi.Features.Pizza
             return Ok(response);
         }
 
-        [HttpGet("Order/{invoiceNo}")]
+        //Without Query
+        /*[HttpGet("Order/{invoiceNo}")]
         public async Task<IActionResult> GetOrderAsync(string invoiceNo)
         {
             var item = await _appDbcontext.PizzaOrders.FirstOrDefaultAsync(x => x.PizzaOrderInvoiceNo == invoiceNo);  
@@ -87,6 +92,30 @@ namespace ZKKADotNetCore.PizzaApi.Features.Pizza
                 OrderDetail = lst
             });
 
+        }*/
+
+        //With Query Dapper
+        [HttpGet("Order/{invoiceNo}")]
+        public IActionResult GetOrder(string invoiceNo)
+        {
+            var item = _dapperService.QueryFirstOrDefault<PizzaOrderInvoiceHeadModel>
+                (
+                PizzaQuery.PizzaOrderQuery,
+                new { PizzaOrderInvoiceNo = invoiceNo }
+                );
+
+            var lst = _dapperService.Query<PizzaOrderInvoiceDetailModel>
+                (
+                PizzaQuery.PizzaOrderDetailQuery,
+                new { PizzaOrderInvoiceNo = invoiceNo }
+                );
+            //Response
+            var model = new PizzaOrderInvoiceResponse
+            {
+                Order = item,
+                OrderDetail = lst
+            };
+            return Ok(model);       
         }
     }
 }
