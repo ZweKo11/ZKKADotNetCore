@@ -34,8 +34,9 @@
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
-            txtCancel = new Button();
-            txtSave = new Button();
+            btnCancel = new Button();
+            btnSave = new Button();
+            btnUpdate = new Button();
             SuspendLayout();
             // 
             // txtTitle
@@ -87,43 +88,60 @@
             label3.TabIndex = 6;
             label3.Text = "Content : ";
             // 
-            // txtCancel
+            // btnCancel
             // 
-            txtCancel.BackColor = Color.FromArgb(158, 158, 158);
-            txtCancel.FlatAppearance.BorderSize = 0;
-            txtCancel.FlatStyle = FlatStyle.Flat;
-            txtCancel.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            txtCancel.ForeColor = SystemColors.ControlLight;
-            txtCancel.Location = new Point(186, 290);
-            txtCancel.Name = "txtCancel";
-            txtCancel.Size = new Size(61, 32);
-            txtCancel.TabIndex = 7;
-            txtCancel.Text = "Cancel";
-            txtCancel.UseVisualStyleBackColor = false;
-            txtCancel.Click += btnCancel_Click;
+            btnCancel.BackColor = Color.FromArgb(158, 158, 158);
+            btnCancel.FlatAppearance.BorderSize = 0;
+            btnCancel.FlatStyle = FlatStyle.Flat;
+            btnCancel.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            btnCancel.ForeColor = SystemColors.ControlLight;
+            btnCancel.Location = new Point(186, 290);
+            btnCancel.Name = "btnCancel";
+            btnCancel.Size = new Size(61, 32);
+            btnCancel.TabIndex = 7;
+            btnCancel.Text = "&Cancel";
+            btnCancel.UseVisualStyleBackColor = false;
+            btnCancel.Click += btnCancel_Click;
             // 
-            // txtSave
+            // btnSave
             // 
-            txtSave.BackColor = Color.FromArgb(124, 179, 66);
-            txtSave.FlatAppearance.BorderSize = 0;
-            txtSave.FlatStyle = FlatStyle.Flat;
-            txtSave.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            txtSave.ForeColor = Color.White;
-            txtSave.Location = new Point(262, 290);
-            txtSave.Name = "txtSave";
-            txtSave.Size = new Size(62, 32);
-            txtSave.TabIndex = 8;
-            txtSave.Text = "Save";
-            txtSave.UseVisualStyleBackColor = false;
-            txtSave.Click += btnSave_Click;
+            btnSave.BackColor = Color.FromArgb(124, 179, 66);
+            btnSave.FlatAppearance.BorderSize = 0;
+            btnSave.FlatStyle = FlatStyle.Flat;
+            btnSave.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            btnSave.ForeColor = Color.White;
+            btnSave.Location = new Point(262, 290);
+            btnSave.Name = "btnSave";
+            btnSave.Size = new Size(62, 32);
+            btnSave.TabIndex = 8;
+            btnSave.Text = "&Save";
+            btnSave.UseVisualStyleBackColor = false;
+            btnSave.Click += btnSave_Click;
+            // 
+            // btnUpdate
+            // 
+            btnUpdate.BackColor = Color.Teal;
+            btnUpdate.FlatAppearance.BorderSize = 0;
+            btnUpdate.FlatStyle = FlatStyle.Flat;
+            btnUpdate.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            btnUpdate.ForeColor = Color.White;
+            btnUpdate.Location = new Point(262, 290);
+            btnUpdate.Name = "btnUpdate";
+            btnUpdate.Size = new Size(62, 32);
+            btnUpdate.TabIndex = 9;
+            btnUpdate.Text = "&Update";
+            btnUpdate.UseVisualStyleBackColor = false;
+            btnUpdate.Visible = false;
+            btnUpdate.Click += btnUpdate_Click;
             // 
             // FrmBlog
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(801, 510);
-            Controls.Add(txtSave);
-            Controls.Add(txtCancel);
+            Controls.Add(btnUpdate);
+            Controls.Add(btnSave);
+            Controls.Add(btnCancel);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
@@ -146,7 +164,8 @@
         private Label label1;
         private Label label2;
         private Label label3;
-        private Button txtCancel;
-        private Button txtSave;
+        private Button btnCancel;
+        private Button btnSave;
+        private Button btnUpdate;
     }
 }
