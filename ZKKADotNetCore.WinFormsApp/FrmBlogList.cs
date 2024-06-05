@@ -39,7 +39,9 @@ namespace ZKKADotNetCore.WinFormsApp
             //int columnIndex = e.ColumnIndex;
             //int rowIndex = e.RowIndex;
 
-            if (e.RowIndex == -1) return; 
+            if (e.RowIndex == -1) return;
+
+            #region If Case
 
             var blogId = Convert.ToInt32(dgvData.Rows[e.RowIndex].Cells["colId"].Value);
 
@@ -57,6 +59,34 @@ namespace ZKKADotNetCore.WinFormsApp
 
                 DeleteBlog(blogId);
             }
+
+            #endregion
+
+
+            #region Switch Case
+
+            int index = e.ColumnIndex;
+            EnumControlType enumControlType = (EnumControlType)index;
+            switch (enumControlType)
+            {
+                case EnumControlType.Edit:
+                    FrmBlog frm = new FrmBlog(blogId);
+                    frm.ShowDialog();
+
+                    BlogList();
+                    break;
+                case EnumControlType.Delete:
+                    var dialogResult = MessageBox.Show("Are you sure to delete?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (dialogResult != DialogResult.Yes) return;
+
+                    DeleteBlog(blogId);
+                    break;
+                case EnumControlType.None:
+                default:
+                    MessageBox.Show("Something was wrong!");
+                    break;
+            }
+            #endregion
         }
 
         private void DeleteBlog(int id)
