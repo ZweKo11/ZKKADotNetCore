@@ -31,6 +31,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ZKKADotNetCore.WinFormsApp"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZKKADotNetCore.WinFormsAppSqlInjection", "ZKKADotNetCore.WinFormsAppSqlInjection\ZKKADotNetCore.WinFormsAppSqlInjection.csproj", "{933504E1-9F2D-4276-81F7-B0FEA95D046D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZKKADotNetCore.NLayer.UI", "ZKKADotNetCore.NLayer.UI\ZKKADotNetCore.NLayer.UI.csproj", "{AC1F2374-BC32-4E43-A5B5-FDE5D01528BB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZKKADotNetCore.NLayer.BusinessLogic", "ZKKADotNetCore.NLayer.BusinessLogic\ZKKADotNetCore.NLayer.BusinessLogic.csproj", "{7EBAE767-FDF6-41ED-B35E-16B3D08DF53E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZKKADotNetCore.NLayer.DataAcess", "ZKKADotNetCore.NLayer.DataAcess\ZKKADotNetCore.NLayer.DataAcess.csproj", "{AFA60EC7-C898-4C56-AEBE-28234378D411}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -81,6 +87,18 @@ Global
 		{933504E1-9F2D-4276-81F7-B0FEA95D046D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{933504E1-9F2D-4276-81F7-B0FEA95D046D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{933504E1-9F2D-4276-81F7-B0FEA95D046D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC1F2374-BC32-4E43-A5B5-FDE5D01528BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC1F2374-BC32-4E43-A5B5-FDE5D01528BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC1F2374-BC32-4E43-A5B5-FDE5D01528BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC1F2374-BC32-4E43-A5B5-FDE5D01528BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7EBAE767-FDF6-41ED-B35E-16B3D08DF53E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7EBAE767-FDF6-41ED-B35E-16B3D08DF53E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7EBAE767-FDF6-41ED-B35E-16B3D08DF53E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7EBAE767-FDF6-41ED-B35E-16B3D08DF53E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AFA60EC7-C898-4C56-AEBE-28234378D411}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AFA60EC7-C898-4C56-AEBE-28234378D411}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AFA60EC7-C898-4C56-AEBE-28234378D411}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AFA60EC7-C898-4C56-AEBE-28234378D411}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
