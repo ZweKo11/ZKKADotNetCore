@@ -5,7 +5,7 @@ getBlogsTable();
 // readBlog();
 // createBlog();
 //updateBlog("c714d658-3bc8-4058-b153-275b249e1f31","Title 1", "Author 1", "Content 1");
-deleteBlog("3ed13f5c-241b-4006-8a19-cd18beda3f61");
+//deleteBlog("3ed13f5c-241b-4006-8a19-cd18beda3f61");
 
 function readBlog(){
     let lst = getBlogs();
@@ -76,23 +76,37 @@ function updateBlog(id, title, author, content){
 }
 
 function deleteBlog(id){
-    let result = confirm("Are you sure to delete this blog?");
-    if(!result) return;
-    let lst = getBlogs();
+    // const result = confirm("Are you sure to delete this blog?");
+    // if(!result) return;
 
-    const items = lst.filter(x => x.id === id);
+    Notiflix.Confirm.show(
+        'Notiflix Confirm',
+        'Do you agree with me?',
+        'Yes',
+        'No',
+        function okCb() {
+            let lst = getBlogs();
 
-    if(items.length === 0){
-        console.log("No data Found!");
-        return;
-    }
+            const items = lst.filter(x => x.id === id);
 
-    lst = lst.filter(x => x.id !== id);
-    const jsonBlog = JSON.stringify(lst);
-    localStorage.setItem(tblBlog, jsonBlog);
+            if(items.length === 0){
+                console.log("No data Found!");
+                return;
+            }
 
-    successMessage("Deleting is successful");
-    getBlogsTable();
+            lst = lst.filter(x => x.id !== id);
+            const jsonBlog = JSON.stringify(lst);
+            localStorage.setItem(tblBlog, jsonBlog);
+
+            successMessage("Deleting is successful");
+            getBlogsTable();
+        },
+        function cancelCb() {
+            alert('If you say so...');
+        },
+        {
+        },
+    );
 }
 
 function getBlogs(){
@@ -155,11 +169,19 @@ function getBlogsTable(){
 }
 
 function successMessage(message){
-    alert(message);
+    Swal.fire({
+        title: "Success",
+        text: message,
+        icon: "success"
+      });
 }
 
 function errorMessage(message){
-    alert(message);
+    Swal.fire({
+        title: "Error!",
+        text: message,
+        icon: "error"
+      });
 }
 
 function clearControls(){
