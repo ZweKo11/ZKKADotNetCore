@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- datepicker cdn css -->
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-datepicker@1.10.0/dist/css/bootstrap-datepicker3.min.css"
+        integrity="sha256-bZRrQVK1rYvxccX8WACyWguD6Ba0h4h/Qs6vmJP2Pws=" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <input data-toggle="datepicker">
+    <textarea data-toggle="datepicker"></textarea>
+    <div data-toggle="datepicker"></div>
+
+    <!-- data attribute -->
+    <button type="button" data-click-id="a" class="btnClick">Click</button>
+    <button type="button" data-click-id="b" class="btnClick">Click</button>
+
+    <!-- Jquery Cdn -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- datepicker cdn js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-datepicker@1.10.0/dist/js/bootstrap-datepicker.min.js" integrity="sha256-iZp9dyOMJKPFdn1UMra9ZMhPZAlSGZUzdhqqEgijE+Q=" crossorigin="anonymous"></script>
+    <script>
+        $('[data-toggle="datepicker"]').datepicker({
+            autoHide: true,
+            format: 'dd--mm--yyyy'
+        });
+
+        // data attribute
+        $('.btnClick').click(function () {
+            let id = $(this).data("click-id");
+            console.log(id);
+        })
+
+    </script>
+</body>
+
+</html>
