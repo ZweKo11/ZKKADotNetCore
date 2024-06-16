@@ -98,7 +98,7 @@ function updateProduct(id, name, price) {
   const item = items[0];
   (item.name = name), (item.price = price);
 
-  const index = lst.findIndex((x) => x.id === id);
+  const index = lst.findIndex((x)=> x.id === id);
   lst[index] = item;
 
   const jsonProduct = JSON.stringify(lst);

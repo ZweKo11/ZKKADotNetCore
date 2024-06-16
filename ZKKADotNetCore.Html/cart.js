@@ -94,7 +94,7 @@ function deleteCart(id){
     function (value) {
         let lst = getCarts();
 
-        const items = lst.filter((x) => x.cartId === id);
+        const items = lst.filter((x)=> x.cartId === id);
 
         if (items.length === 0) {
           deleteCart(id);
