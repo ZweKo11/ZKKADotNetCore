@@ -8,7 +8,7 @@ function uuidv4() {
   );
 }
 
-function successMessage(message) {
+function successMessage (message) {
 //   Swal.fire({
 //     title: "Success",
 //     text: message,

@@ -101,7 +101,7 @@ function deleteCart(id){
           return;
         }
 
-        lst = lst.filter((x) => x.cartId !== id);
+        lst = lst.filter( (x) => x.cartId !== id);
         const jsonCarts = JSON.stringify(lst);
         localStorage.setItem(tblCarts, jsonCarts);
 
