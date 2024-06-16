@@ -80,7 +80,7 @@ function decreaseProduct(id){
     let items = lst.filter((x) => x.cartId === id);
     let item = items[0];
     if(item.quantity === 1){
-        console.log("remove");
+        deleteCart(id);
     }else{
         item.quantity -=1;
         console.log(item.quantity);
@@ -97,7 +97,7 @@ function deleteCart(id){
         const items = lst.filter((x)=> x.cartId === id);
 
         if (items.length === 0) {
-          deleteCart(id);
+          console.log('no data');
           return;
         }
 
